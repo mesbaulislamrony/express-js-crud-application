@@ -1,4 +1,3 @@
-
 var con = require("../configs/database");
 const bcrypt = require("bcryptjs");
 
