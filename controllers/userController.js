@@ -1,4 +1,4 @@
-var con = require("../configs/database");
+var con = require("../helpers/connection");
 const bcrypt = require("bcryptjs");
 
 exports.get = (request, response, next) => {
