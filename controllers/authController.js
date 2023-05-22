@@ -1,7 +1,6 @@
 var con = require("../configs/database");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
-const auth = require("../configs/auth");
 
 exports.register = (request, response, next) => {
     con.query(`SELECT * FROM users WHERE mobile_no = ${con.escape(request.body.mobile_no)}`, function (error, result, fields) {
@@ -34,7 +33,7 @@ exports.login = (request, response, next) => {
                 return response.status(400).send({ error: bcryptError, data: null, message: "Email or password is incorrect" });
             }
             if (bcryptResult) {
-            	const token = jwt.sign({ id: result[0].id }, auth.secret, { expiresIn: "2h" });
+            	const token = jwt.sign({ user: result[0] }, process.env.JWT_SECRET, { expiresIn: "2h" });
             	return response.status(201).send({ error: false, data: token, message: "The user has been logged in with us!" });
             }
         });
