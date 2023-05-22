@@ -7,3 +7,4 @@ npm install nodemon
 npm install mysql
 npm install bcryptjs
 npm install jsonwebtoken
+npm install dotenv
