@@ -14,21 +14,21 @@ services:
     environment:
       MYSQL_DATABASE: voggle
       MYSQL_USER: admin
-      MYSQL_PASSWORD: 12345
-      MYSQL_ROOT_PASSWORD: 12345
+      MYSQL_PASSWORD: mesbaul
+      MYSQL_ROOT_PASSWORD: mesbaul
       SERVICE_TAGS: dev
       SERVICE_NAME: mysqldb
     networks:
       - internalnet
 
   nodeapp:
+    image: nodeapp:v1
     container_name: nodeappcontainer
     build: .
-    image: nodeapp:v1
     environment:
       DB_HOST: mysqldb
-      DB_USER: 'root'
-      DB_PASSWORD: '12345'
+      DB_USER: admin
+      DB_PASSWORD: mesbaul
       DB_NAME: voggle
       DB_PORT: 3306
       DB_CONNECTION_LIMIT: 10

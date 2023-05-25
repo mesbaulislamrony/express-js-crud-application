@@ -5,7 +5,8 @@ var conn = mysql.createConnection({
 	host: dbConfig.host,
 	user: dbConfig.user,
 	password: dbConfig.password,
-	database: dbConfig.database
+	database: dbConfig.database,
+	port: dbConfig.port
 }); 
  
 conn.connect(function(err) {
