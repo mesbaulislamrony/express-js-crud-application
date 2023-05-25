@@ -1,5 +1,5 @@
 # express-js-crud-application
-Express js crud application with mongoes
+A crud application of Express JS with MySQL. JWT (json web token) is used for authentication.
 
 npm install -g express-generator
 express --no-view
